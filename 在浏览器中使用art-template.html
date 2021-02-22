@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在浏览器中使用art-template</title>
+</head>
+<body>
+<!--	注意在浏览器中需要引用lib/template-web.js文件-->
+	<script src="node_modules/art-template/lib/template-web.js"></script>
+	<script type='text/template' id='tpl'>
+	今天是{{ date }}
+	我在{{ location }}
+	我想{{ each wishes }} {{ $value }} {{/each}}
+	</script>
+	<script>var ret = template('tpl',{
+			date:'0914',
+			location:'2实',
+			wishes:[
+				'上厕所',
+				'喝饮料',
+				'睡觉'
+			]
+			
+		})
+	console.log(ret)
+	</script>
+</body>
+</html>
